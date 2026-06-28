@@ -49,8 +49,8 @@
 
   nav{position:absolute;z-index:10;top:0;left:0;right:0;color:#f7efdf;display:flex;align-items:center;justify-content:space-between;padding:28px 38px}
   .mark{font-family:'Cormorant',Georgia,serif;font-size:27px;font-weight:600;font-style:italic;letter-spacing:.01em;text-shadow:0 2px 20px rgba(0,0,0,.25)}
-  .links{display:flex;align-items:center;gap:28px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-  .links a{opacity:.84}
+  .links{display:flex;align-items:center;gap:32px;font-size:14px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+  .links a{opacity:.86;transition:opacity .25s ease}
   .links a:hover{opacity:1}
 
   .hero{min-height:620px;height:86vh;position:relative;color:#f8f0e2;overflow:hidden;isolation:isolate}
@@ -61,8 +61,9 @@
   .hero-copy{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:88px 0 70px}
   .hero-logo{font-family:'Cormorant',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(20px,8.5vw,100px);line-height:1.08;letter-spacing:.01em;color:#f8f0e2;text-shadow:0 4px 40px rgba(0,0,0,.45);white-space:nowrap}
   .hero-actions{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;justify-content:center}
-  .hero-rail{position:absolute;z-index:3;right:38px;bottom:28px;display:grid;grid-template-columns:repeat(5,auto);gap:8px;color:#f8f0e2}
-  .hero-rail span{border:1px solid rgba(248,240,226,.32);padding:8px 10px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(22,18,14,.24)}
+  .hero-rail{position:absolute;z-index:3;right:38px;bottom:30px;display:grid;grid-template-columns:repeat(5,auto);gap:9px;color:#f8f0e2}
+  .hero-rail a{border:1px solid rgba(248,240,226,.36);padding:11px 14px;font-size:12.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;background:rgba(22,18,14,.28);transition:background .25s ease,border-color .25s ease,color .25s ease}
+  .hero-rail a:hover{background:var(--wine);border-color:var(--wine);color:#fff}
 
   .intro{display:grid;grid-template-columns:.72fr 1.28fr;gap:58px;align-items:end;padding:78px 0 70px;border-bottom:1px solid var(--line)}
   .intro h2{font-size:clamp(30px,4.3vw,58px);line-height:1.02;max-width:760px}
@@ -154,12 +155,19 @@
   .beauty-dots span{width:7px;height:7px;border-radius:50%;background:rgba(247,239,223,.4)}
   .beauty-dots span.on{background:rgba(247,239,223,.95)}
 
-  .visit{position:relative;min-height:560px;color:#f8f0e2;display:flex;align-items:center;overflow:hidden}
-  .visit::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,9,7,.74),rgba(12,9,7,.28) 62%,rgba(12,9,7,.2));z-index:1}
-  .visit img{position:absolute;inset:0}
-  .visit-copy{position:relative;z-index:2}
-  .visit h2{font-size:clamp(44px,7vw,92px);line-height:.96;margin:15px 0}
+  .visit{position:relative;min-height:560px;color:#f8f0e2;display:flex;align-items:center;overflow:hidden;padding:64px 0}
+  .visit::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,9,7,.82),rgba(12,9,7,.46) 70%,rgba(12,9,7,.5));z-index:1}
+  .visit > img{position:absolute;inset:0}
+  .visit-copy{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+  .visit h2{font-size:clamp(40px,6vw,84px);line-height:.96;margin:12px 0}
+  .visit h2 .map-link{transition:color .25s ease;text-underline-offset:8px;text-decoration-thickness:2px}
+  .visit h2 .map-link:hover,.visit h2 .map-link:focus-visible{color:#e3c28b;text-decoration:underline}
   .visit p{color:rgba(248,240,226,.82);max-width:470px;font-size:18px}
+  .visit-addr{margin-top:16px;font-family:'Spline Sans Mono',ui-monospace,monospace;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(248,240,226,.66)}
+  .visit-map{position:relative;display:block;overflow:hidden;border-radius:5px;border:1px solid rgba(247,239,223,.28);box-shadow:0 22px 60px rgba(0,0,0,.45)}
+  .visit-map img{position:relative;inset:auto;height:auto;width:100%;aspect-ratio:780/460;filter:none;transition:transform .5s ease}
+  .visit-map:hover img,.visit-map:focus-visible img{transform:scale(1.04)}
+  .visit-map-cta{position:absolute;left:14px;bottom:14px;background:var(--wine);color:#f8f0e2;padding:9px 13px;font-family:'Spline Sans Mono',ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.35)}
   footer{background:var(--night);color:#c9bba3;padding:34px 38px;display:flex;justify-content:space-between;gap:18px;align-items:center;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
   footer .foot-mark{font-family:'Cormorant',Georgia,serif;font-size:22px;font-style:italic;color:#f6eddb;text-transform:none;letter-spacing:0}
 
@@ -179,6 +187,7 @@
     .hero-rail{grid-template-columns:repeat(2,max-content)}
     .rooms{grid-template-columns:1fr}.room.large,.room.wide,.room.small{grid-column:1;min-height:360px}
     .archive-media{min-height:520px}.product-grid{grid-template-columns:1fr}.culture-notes{grid-template-columns:1fr}
+    .visit-copy{grid-template-columns:1fr;gap:30px}
     .flyer-stack{min-height:470px}footer{display:block}.foot-mark{margin-bottom:8px}
   }
   @media(max-width:480px){
@@ -199,8 +208,7 @@
 <nav aria-label="Primary">
   <div class="links">
     <a href="#rooms">Shop</a>
-    <a href="#archive">Archive</a>
-    <a href="#music">Music</a>
+    <a href="https://www.instagram.com/brooklynvintagecompany/" target="_blank" rel="noopener">Instagram</a>
     <a href="#visit">Visit</a>
   </div>
 </nav>
@@ -216,8 +224,8 @@
       <a class="button" href="#archive">From the archive</a>
     </div>
   </div>
-  <div class="hero-rail" aria-label="Shop avenues">
-    <span>Fashion</span><span>Records</span><span>Objects</span><span>Beauty</span><span>Music</span>
+  <div class="hero-rail" role="navigation" aria-label="Shop avenues">
+    <a href="#era">Fashion</a><a href="#music">Records</a><a href="#rooms">Objects</a><a href="#beauty">Beauty</a><a href="#music">Music</a>
   </div>
 </header>
 
@@ -389,11 +397,18 @@
   </section>
 
   <section class="visit" id="visit">
-    <img src="images/07-storefront-exterior-from-video.jpg" width="720" height="1280" loading="lazy" decoding="async" alt="Brooklyn Vintage Company storefront in Bushwick">
+    <img src="images/13-hero-storefront-wide-settee.jpg" width="1080" height="1440" loading="lazy" decoding="async" alt="Inside Brooklyn Vintage Company, the Bushwick shop floor">
     <div class="visit-copy wrap">
-      <span class="eyebrow">Come by, say hi</span>
-      <h2>Open in Bushwick.</h2>
-      <p>Step inside, look around, take home something with a story.</p>
+      <div class="visit-text">
+        <span class="eyebrow">Come by, say hi</span>
+        <h2><a class="map-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Brooklyn+Vintage+Company%2C+194+Irving+Ave%2C+Brooklyn%2C+NY+11237&amp;destination_place_id=ChIJw6jm6LxdwokR37Bt276VnYk" target="_blank" rel="noopener">Open in Bushwick.</a></h2>
+        <p>Step inside, look around, take home something with a story.</p>
+        <p class="visit-addr">194 Irving Ave, corner of Himrod St, Brooklyn NY 11237</p>
+      </div>
+      <a class="visit-map" href="https://www.google.com/maps/dir/?api=1&amp;destination=Brooklyn+Vintage+Company%2C+194+Irving+Ave%2C+Brooklyn%2C+NY+11237&amp;destination_place_id=ChIJw6jm6LxdwokR37Bt276VnYk" target="_blank" rel="noopener" aria-label="Get directions to Brooklyn Vintage Company on Google Maps">
+        <img src="images/26-visit-map-bushwick.png" width="780" height="460" loading="lazy" decoding="async" alt="Map showing Brooklyn Vintage Company at 194 Irving Avenue in Bushwick">
+        <span class="visit-map-cta">Get directions</span>
+      </a>
     </div>
   </section>
 </main>
@@ -419,7 +434,7 @@
 
   function startCarousel(){
     if (timer || reducedMotion.matches || slides.length < 2) return;
-    timer = window.setInterval(showNextSlide, 4200);
+    timer = window.setInterval(showNextSlide, 3800);
   }
 
   function stopCarousel(){
