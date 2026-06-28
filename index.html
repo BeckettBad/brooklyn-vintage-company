@@ -48,9 +48,8 @@
   .button::after{content:"";width:18px;height:1px;background:currentColor;display:block}
 
   nav{position:absolute;z-index:10;top:0;left:0;right:0;color:#f7efdf;display:flex;align-items:center;justify-content:space-between;padding:28px 38px}
-  .mark{font-family:'Cormorant',Georgia,serif;font-size:27px;font-weight:600;font-style:italic;letter-spacing:.01em;text-shadow:0 2px 20px rgba(0,0,0,.25)}
   .links{display:flex;align-items:center;gap:40px;font-size:18px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-  .links a{opacity:.86;transition:opacity .25s ease}
+  .links a{display:inline-flex;align-items:center;min-height:44px;opacity:.86;transition:opacity .25s ease}
   .links a:hover{opacity:1}
 
   .hero{min-height:620px;height:86vh;position:relative;color:#f8f0e2;overflow:hidden;isolation:isolate}
@@ -183,7 +182,7 @@
     .beauty-image{max-width:400px;margin:0 auto}
   }
   @media(max-width:768px){
-    .links{display:none}
+    nav{justify-content:center;padding:18px 20px}.links{display:flex;justify-content:center;gap:18px;font-size:13px;letter-spacing:.13em}.links a{padding:0 4px}
     .hero-rail{grid-template-columns:repeat(2,max-content)}
     .rooms{grid-template-columns:1fr}.room.large,.room.wide,.room.small{grid-column:1;min-height:360px}
     .archive-media{min-height:520px}.product-grid{grid-template-columns:1fr}.culture-notes{grid-template-columns:1fr}
@@ -191,9 +190,9 @@
     .flyer-stack{min-height:470px}footer{display:block}.foot-mark{margin-bottom:8px}
   }
   @media(max-width:480px){
-    body{font-size:15px}nav{padding:18px}.mark{font-size:23px}.hero{min-height:620px}.hero h1{font-size:44px}.hero-copy{padding-top:96px}.hero-rail{display:none}
+    body{font-size:15px}nav{padding:14px 12px}.links{gap:13px;font-size:12px;letter-spacing:.1em}.links a{padding:0 2px}.hero{min-height:620px}.hero-copy{padding-top:96px}.hero-rail{display:none}
     .signal-row{grid-template-columns:1fr}.signal{border-right:0}.signal{border-bottom:1px solid var(--line)}.signal:last-child{border-bottom:0}
-    .section-head{display:block}.section-head p{margin-top:14px}.archive-media{grid-template-columns:1fr;min-height:0}.archive-card{min-height:320px}.catalog-card dl{grid-template-columns:1fr}
+    .archive-media{grid-template-columns:1fr;min-height:0}.archive-card{min-height:320px}.catalog-card dl{grid-template-columns:1fr}
     .flyer.second{display:none}.flyer{position:relative;width:min(100%,310px);height:500px}.flyer-stack{min-height:0}.culture{padding:70px 0}
     .beauty-nav{width:44px;height:44px}.beauty-nav.prev{left:10px}.beauty-nav.next{right:10px}.beauty-dots{bottom:10px}
   }
@@ -372,14 +371,13 @@
         <div class="bslide on"><img src="images/adoris-hero-01-stoop-pink-lipgloss.jpg" width="560" height="700" loading="lazy" decoding="async" alt="ADORIS pink lip gloss on a Brooklyn brownstone stoop"></div>
         <div class="bslide"><img src="images/adoris-hero-02-skyline-sunset-lipgloss.jpg" width="560" height="700" loading="lazy" decoding="async" alt="ADORIS lip gloss against the Manhattan skyline at sunset"></div>
         <div class="bslide"><img src="images/adoris-hero-03-cobblestone-burgundy-lipgloss.jpg" width="560" height="700" loading="lazy" decoding="async" alt="ADORIS burgundy lip gloss on a cobblestone street"></div>
-        <div class="bslide"><img src="images/adoris-hero-04-centralpark-facial-mist.jpg" width="560" height="700" loading="lazy" decoding="async" alt="ADORIS facial mist above Central Park"></div>
         <div class="bslide"><img src="images/adoris-hero-05-grandcentral-exfoliator-tube.jpg" width="560" height="700" loading="lazy" decoding="async" alt="ADORIS exfoliator in Grand Central Terminal"></div>
         <div class="bslide"><img src="images/adoris-hero-06-subway-serum.jpg" width="560" height="700" loading="lazy" decoding="async" alt="ADORIS serum on a subway platform"></div>
         <div class="bslide"><img src="images/adoris-hero-07-timessquare-setting-powder.jpg" width="560" height="700" loading="lazy" decoding="async" alt="ADORIS setting powder in Times Square at night"></div>
         <div class="bslide"><img src="images/adoris-hero-08-brooklynbridge-serum.jpg" width="560" height="700" loading="lazy" decoding="async" alt="ADORIS treatment serum at the Brooklyn Bridge"></div>
         <button class="beauty-nav prev" type="button" aria-label="Previous product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
         <button class="beauty-nav next" type="button" aria-label="Next product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-        <div class="beauty-dots" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="beauty-dots" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       </div>
     </div>
   </section>
